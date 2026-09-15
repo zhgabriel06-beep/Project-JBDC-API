@@ -1,6 +1,5 @@
-package Spring.Booot.Study.JBDC.model;
+package Spring.Booot.Study.service;
 
-import Spring.Booot.Study.JBDC.service.iConverteDados;
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
 

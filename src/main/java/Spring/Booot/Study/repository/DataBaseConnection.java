@@ -1,4 +1,4 @@
-package Spring.Booot.Study.JBDC.connection;
+package Spring.Booot.Study.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,13 +9,13 @@ public class DataBaseConnection {
 
     private static DataBaseConnection instance;
     private final Connection connection;
+    private final String URL = "jdbc:postgresql://localhost:5432/biblioteca";
+    private final String USER = "postgres";
+    private final String PASSWORD = "3010";
 
     private DataBaseConnection() {
         try {
-            this.connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/biblioteca",
-                    "postgres",
-                    "3010"
+            this.connection = DriverManager.getConnection(URL, USER, PASSWORD
             );
         } catch (SQLException e) {
             throw new RuntimeException("Cannot connect to database.", e);

@@ -1,17 +1,16 @@
-package Spring.Booot.Study.JBDC.connection;
+package Spring.Booot.Study.repository;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Connection {
     public static void main(String[] args) {
         List<Usuario> usuarios = new ArrayList<>();
         try {
-            Connection connection = DataBaseConnection.getInstance().connection();
+            java.sql.Connection connection = DataBaseConnection.getInstance().connection();
             PreparedStatement pstm = connection.prepareStatement("SELECT * FROM usuarios");
             ResultSet resultSet = pstm.executeQuery();
             while (resultSet.next()) {

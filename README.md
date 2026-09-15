@@ -19,9 +19,3 @@ e conversão de JSON para objetos Java usando Jackson.
 
 Também estou trabalhando na integração com PostgreSQL utilizando JDBC.
 
-## Próximos passos
-
-- [ ] Cadastro de usuários
-- [ ] Cadastro de livros
-- [ ] Empréstimos
-- [ ] CRUD

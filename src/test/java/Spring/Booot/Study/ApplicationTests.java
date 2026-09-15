@@ -1,4 +1,4 @@
-package Spring.Booot.Study.JBDC;
+package Spring.Booot.Study;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
