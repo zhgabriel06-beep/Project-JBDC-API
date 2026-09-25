@@ -3,18 +3,15 @@ package Spring.Booot.Study.dto;
 
 import Spring.Booot.Study.infra.DadosSerie;
 import Spring.Booot.Study.infra.DadosTemporada;
+import Spring.Booot.Study.infra.Serie;
 import Spring.Booot.Study.service.ConsumoApi;
 import Spring.Booot.Study.service.ConverteDados;
 
 import java.util.*;
-
-
-
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -29,7 +26,6 @@ public class Main {
     public void exibeMenu() {
 
         var opcao =-1;
-
         while(opcao != 0){
         var menu = """
                 1 - Buscar séries
@@ -89,7 +85,12 @@ public class Main {
             temporadas.forEach(System.out::println);
     }
     private void listarSeriesBuscadas() {
-        dadosSerie.forEach(System.out::println);
+        List<Serie> series = new ArrayList<>();
+            series = dadosSerie.stream()
+                    .map(d -> new Serie(d))
+                        .collect(Collectors.toList());
+        series.stream().sorted(Comparator.comparing(Serie:: getGenero))
+                .forEach(System.out::println);
     }
 }
 
